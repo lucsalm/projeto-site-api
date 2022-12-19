@@ -1,33 +1,31 @@
 package com.project.controller;
 
-import com.project.dto.UserRequestDTO;
-import com.project.dto.UserRequestRegisterDTO;
-import com.project.service.ProjectService;
+import com.project.dto.request.user.UserRequestDTO;
+import com.project.dto.request.user.UserRequestRegisterDTO;
+import com.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 import javax.validation.Valid;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/v1/user")
-public class ProjectController {
+public class UserController {
 
 
     @Autowired
-    private ProjectService service;
+    private UserService service;
 
-    @CrossOrigin
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Object> register(@Valid @RequestBody UserRequestRegisterDTO userRequestDTO){
         return service.accountRegister(userRequestDTO);
     }
 
-    @CrossOrigin
+
     @PostMapping("/login")
     @ResponseStatus(HttpStatus.OK)
     public Mono<Object> login(@Valid @RequestBody UserRequestDTO userRequestDTO){

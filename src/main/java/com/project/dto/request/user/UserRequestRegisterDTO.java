@@ -1,4 +1,4 @@
-package com.project.dto;
+package com.project.dto.request.user;
 
 
 import lombok.AllArgsConstructor;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,6 +18,15 @@ public class UserRequestRegisterDTO extends UserRequestDTO {
     private String username;
 
     @NotNull
-    @Pattern(regexp = "^(\\+\\d{1,9}\\s)?\\(?\\d{2}\\)?[\\s.-]?\\d{5}[\\s.-]?\\d{4}$", message = "Telefone inválido")
+    @Pattern(regexp = "^\\(?([1-9]{2})\\)([ ])([0-9]{5})([-])([0-9]{4})$", message = "Telefone inválido")
     private String telephone;
+
+    @NotNull
+    private String cep;
+
+    @NotNull
+    private String address;
+
+    @NotNull
+    private Integer addressNumber;
 }

@@ -1,7 +1,7 @@
 package com.project.service;
 
-import com.project.dto.UserRequestDTO;
-import com.project.dto.UserRequestRegisterDTO;
+import com.project.dto.request.user.UserRequestDTO;
+import com.project.dto.request.user.UserRequestRegisterDTO;
 import com.project.mapper.UserMapper;
 import com.project.model.User;
 import com.project.repository.UserRepository;
@@ -13,11 +13,10 @@ import org.springframework.web.server.ResponseStatusException;
 import reactor.core.publisher.Mono;
 
 import java.util.Arrays;
-import java.util.UUID;
 
 @Slf4j
 @Service
-public class ProjectService {
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;

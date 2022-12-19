@@ -16,7 +16,7 @@ import java.util.UUID;
 public class User{
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private UUID id;
 
@@ -31,5 +31,13 @@ public class User{
 
     @Column(name = "telephone")
     private String telephone;
+
+    @Column(name = "cep")
+    private String cep;
+
+    @Column(name = "address")
+    private String address;
+    @Column(name = "address_number")
+    private Integer addressNumber;
 
 }

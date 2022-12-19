@@ -1,6 +1,6 @@
 //package com.project.validator;
 //
-//import com.project.dto.UserRequestDTO;
+//import com.project.dto.request.user.UserRequestDTO;
 //import org.springframework.http.HttpStatus;
 //import org.springframework.web.server.ResponseStatusException;
 //
